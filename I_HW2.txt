@@ -1,0 +1,52 @@
+FEAP * * HW2
+0 0 0 3 3 8
+
+MATErial 1
+solid
+elastic isotropic 200e9 0.3
+
+COORdinates
+001 1 000 0 0
+101 0 100 0 0
+102 1 000 1 0
+202 0 100 1 0
+203 1 000 0 1
+303 0 100 0 1
+304 1 000 1 1
+404 0 100 1 1
+
+ELEMents
+001 1 1 001 002 103 102 203 204 305 304
+100 0 1 100 101 202 201 302 303 404 403
+
+BOUNdary
+001 101 -1 -1 -1
+304 000 1 1 1
+
+FORCes
+303 0 0 0 -8000
+404 0 0 0 -8000
+
+END
+
+BATCh
+ FORM
+ TANGent
+ SOLVe
+ 
+ PLOT PERSpective 1
+ PLOT DEFOrmation 5 0
+ PLOT HIDE
+ PLOT CONT 3
+ PLOT DISPlacement, ,1
+ PLOT BOUNdary
+ PLOT LOAD
+ PLOT NODE -1
+ 
+END
+inew: 0
+300 15 5
+0 0 1
+
+INTEractive 
+STOP
